@@ -1,0 +1,6 @@
+﻿<%@ ServiceHost 
+    Language="C#" 
+    Debug="true" 
+    Service="WideWorldImporters.Services.CitiesService, WideWorldImporters.Services" 
+    CodeBehind="CitiesService.svc.cs"    
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>

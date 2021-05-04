@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FA9F685-C0D2-45F1-A950-7284D06E9724}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WideWorldImporters.Data</RootNamespace>
+    <AssemblyName>WideWorldImporters.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\ReferencedAssemblies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuyingGroup.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuyingGroups_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cities_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColdRoomTemperature.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColdRoomTemperatures_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Colors_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Countries_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCategories_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCategory.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customers1.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customers_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTransaction.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMethod.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMethods_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetermineCustomerAccess_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMovementUpdates_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOrderUpdates_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPurchaseUpdates_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSaleUpdates_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetStockHoldingUpdates_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransactionUpdates_Result.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceLine.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderLine.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackageType.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackageTypes_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethods_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="People_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderLine.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialDeal.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StateProvince.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StateProvinces_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockGroup.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockGroups_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockItem.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockItemHolding.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockItemStockGroup.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockItems_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockItemTransaction.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCategories_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierCategory.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Suppliers1.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Suppliers_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierTransaction.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemParameter.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionType.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionTypes_Archive.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleTemperature.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleTemperatures1.cs">
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WideWorldImportersModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WideWorldImportersModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WideWorldImportersModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WideWorldImportersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WideWorldImportersModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WideWorldImportersModel.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="WideWorldImportersModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WideWorldImportersModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="WideWorldImportersModel.edmx.diagram">
+      <DependentUpon>WideWorldImportersModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WideWorldImportersModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WideWorldImportersModel.Context.cs</LastGenOutput>
+      <DependentUpon>WideWorldImportersModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="WideWorldImportersModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WideWorldImportersModel.edmx</DependentUpon>
+      <LastGenOutput>WideWorldImportersModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

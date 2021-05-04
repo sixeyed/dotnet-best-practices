@@ -1,0 +1,8 @@
+services:
+
+  wwi-db:
+    image: sixeyed/wwi-db
+    ports:
+      - 1433:1433
+    build:
+      context: wwi-db

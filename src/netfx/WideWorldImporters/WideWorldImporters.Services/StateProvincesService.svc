@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WideWorldImporters.Services.StateProvincesService" CodeBehind="StateProvincesService.svc.cs" %>
