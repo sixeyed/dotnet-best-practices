@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorldWideImporters.Data\WorldWideImporters.Data.csproj" />
+    <ProjectReference Include="..\WorldWideImporters.Model\WorldWideImporters.Model.csproj" />
+  </ItemGroup>
+
+</Project>
