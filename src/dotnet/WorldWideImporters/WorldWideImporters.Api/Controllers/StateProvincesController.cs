@@ -37,7 +37,7 @@ namespace WorldWideImporters.Api.Controllers
 
             var provinces = new List<model.StateProvince>();
 
-            var useCache = _config.GetValue<bool>("UseCache");
+            var useCache = _config.GetValue<bool>("Caching:Enabled");
             if (useCache == false || _StateProvinces == null)
             {
                 var stopwatch = Stopwatch.StartNew();

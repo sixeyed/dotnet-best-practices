@@ -32,6 +32,7 @@ spec:
       automountServiceAccountToken: false
       containers:
         - image: sixeyed/wwi-api:buster-slim
+          imagePullPolicy: Always
           name: app
           ports:
             - containerPort: 80

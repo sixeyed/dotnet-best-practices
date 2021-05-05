@@ -6,4 +6,10 @@ metadata:
 data:
   override.json: |-
     {
+      "Caching": {
+        "Enabled": true,
+        "MemoryCache": {
+          "DurationSeconds": 180
+        }
+      }
     }
