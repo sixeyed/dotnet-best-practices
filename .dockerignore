@@ -1,0 +1,8 @@
+**
+!docker/
+!src/
+**/.vs
+**/packages
+**/obj
+**/bin
+**/*.user
