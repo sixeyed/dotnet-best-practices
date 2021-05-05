@@ -31,7 +31,7 @@ Deploy:
 ```
 kubectl apply -f kubernetes/wwi/
 
-kubectl get pods 
+kubectl get pods -o wide
 
 kubectl get ingress
 ```

@@ -18,7 +18,7 @@ namespace WideWorldImporters.Services
         {
             XmlConfigurator.Configure();
             var log = LogManager.GetLogger(typeof(StateProvincesService));
-            log.Debug("GetStateProvinces started");
+            log.Info("GetStateProvinces started");
 
             var provinces = new List<entities.StateProvince>();
 
@@ -36,7 +36,7 @@ namespace WideWorldImporters.Services
                         StateProvinceName = province.StateProvinceName
                     });
                 }
-                log.Debug("GetStateProvinces data load took: " + stopwatch.ElapsedMilliseconds + "ms");
+                log.Info("GetStateProvinces data load took: " + stopwatch.ElapsedMilliseconds + "ms");
                 if (useCache)
                 {
                     _StateProvinces = provinces;
@@ -47,7 +47,7 @@ namespace WideWorldImporters.Services
             {
                 StateProvinces = useCache ? _StateProvinces : provinces
             };
-            log.Debug("GetStateProvinces returning: " + response.StateProvinces.Count() + " provinces; using cache: " + useCache);
+            log.Info("GetStateProvinces returning: " + response.StateProvinces.Count() + " provinces; using cache: " + useCache);
             return response;
         }
     }
