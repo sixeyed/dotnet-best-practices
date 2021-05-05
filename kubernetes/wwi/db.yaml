@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wwi-db
+  namespace: wwi
+spec:
+  type: ClusterIP
+  ports:
+    - port: 1433
+      targetPort: mssql
+  selector:
+    app: wwi
+    component: db
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wwi-db
+  namespace: wwi
+spec:
+  selector:
+    matchLabels:
+      app: wwi
+      component: db
+  template:
+    metadata:
+      labels:
+        app: wwi
+        component: db
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - image: sixeyed/wwi-db:ltsc2019
+          name: db
+          ports:
+            - containerPort: 1433
+              name: mssql
+          env:
+            - name: sa_password
+              valueFrom:
+                secretKeyRef:
+                  key: sa_password
+                  name: wwi-db-password
+          resources:
+            requests:
+              cpu: 500m
+              memory: 400Mi
+            limits:
+              cpu: 1000m
+              memory: 750Mi 
+      nodeSelector:
+        kubernetes.io/os: windows

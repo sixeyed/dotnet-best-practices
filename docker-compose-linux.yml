@@ -1,0 +1,4 @@
+services:
+
+  wwi-api:
+    image: sixeyed/wwi-api:buster-slim

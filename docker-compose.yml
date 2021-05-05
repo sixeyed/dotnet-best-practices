@@ -1,14 +1,14 @@
 services:
 
   wwi-db:
-    image: sixeyed/wwi-db
+    image: sixeyed/wwi-db:ltsc2019
     ports:
       - 1433:1433
     build:
       context: docker/wwi-db
 
   wwi-svc:
-    image: sixeyed/wwi-svc
+    image: sixeyed/wwi-svc:ltsc2019
     ports:
       - 8080:80
     depends_on:
@@ -17,7 +17,7 @@ services:
       dockerfile: docker/wwi-svc/Dockerfile
 
   wwi-api:
-    image: sixeyed/wwi-api
+    image: sixeyed/wwi-api:1809
     ports:
       - 8088:80
     depends_on:

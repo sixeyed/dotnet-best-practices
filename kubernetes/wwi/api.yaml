@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wwi-api
+  namespace: wwi
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  selector:
+    app: wwi
+    component: api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wwi-api
+  namespace: wwi
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: wwi
+      component: api
+  template:
+    metadata:
+      labels:
+        app: wwi
+        component: api
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - image: sixeyed/wwi-api:buster-slim
+          name: app
+          ports:
+            - containerPort: 80
+              name: http
+          volumeMounts:
+            - name: config
+              mountPath: "/app/config"
+              readOnly: true
+            - name: secret
+              mountPath: "/app/secrets"
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            periodSeconds: 20
+            initialDelaySeconds: 15
+          resources:
+            requests:
+              cpu: 125m
+              memory: 100Mi
+            limits:
+              cpu: 125m
+              memory: 200Mi              
+      volumes:
+        - name: config
+          projected:
+            sources:             
+              - configMap:
+                  name: wwi-api-config-override
+              - configMap:
+                  name: wwi-config-logging
+        - name: secret
+          secret:
+            secretName: wwi-api-secret-connectionstrings
+      nodeSelector:
+        kubernetes.io/os: linux

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wwi-svc-appsettings
+  namespace: wwi
+data:
+  appSettings.config: |-
+    <appSettings>
+      <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
+      <add key="UseCache" value="true" />
+      <add key="CacheDurationSeconds" value="120" />
+    </appSettings>

@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wwi-svc
+  namespace: wwi
+  labels:
+    app: wwi
+    component: svc
+spec:
+  rules:
+  - host: ws.wwi.sixeyed.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wwi-svc
+            port: 
+              name: http
