@@ -1,2 +1,8 @@
 {
+  "Caching": {
+    "Enabled": true,
+    "MemoryCache": {
+      "DurationSeconds": 120
+    }
+  }
 }

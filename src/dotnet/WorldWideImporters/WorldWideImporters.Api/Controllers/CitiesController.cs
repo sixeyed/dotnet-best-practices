@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WorldWideImporters.Caching;
@@ -34,10 +35,13 @@ namespace WorldWideImporters.Api.Controllers
 
             var cities = await _cache.GetAsync($"CitiesService.GetCities.{stateProvinceCode}", async () =>
             {
-                return await _context.Cities
+                var stopwatch = Stopwatch.StartNew();
+                var cities = await _context.Cities
                               .Include(x => x.StateProvince)
                               .Where(x => x.StateProvince.StateProvinceCode == stateProvinceCode)
                               .ToArrayAsync();
+                _logger.LogTrace($"GetCities data load for: {stateProvinceCode}, took: {stopwatch.ElapsedMilliseconds}ms");
+                return cities;
             });
 
             if (cities.Count() == 0)
@@ -48,7 +52,7 @@ namespace WorldWideImporters.Api.Controllers
 
             var modelCities = cities.Select(x => _mapper.Map<model.City>(x));
 
-            _logger.LogDebug($"GetCities for: {stateProvinceCode}, returning: {modelCities.Count()} cities");
+            _logger.LogInformation($"GetCities for: {stateProvinceCode}, returning: {modelCities.Count()} cities");
             return Ok(modelCities);
         }
     }

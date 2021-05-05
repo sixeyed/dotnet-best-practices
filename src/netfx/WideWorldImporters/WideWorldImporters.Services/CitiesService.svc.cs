@@ -47,7 +47,7 @@ namespace WideWorldImporters.Services
                 return cities;
             });
 
-            _log.Debug($"GetCities for: {request.StateProvinceCode}, returning: {response.Cities.Count()} cities, cache: {_cache.GetType().Name}");
+            _log.Info($"GetCities for: {request.StateProvinceCode}, returning: {response.Cities.Count()} cities, cache: {_cache.GetType().Name}");
             return response;
         }
     }

@@ -15,8 +15,8 @@ namespace WorldWideImporters.Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((builderContext, config) =>
                 {
-                    config.AddJsonFile("configs/logging.json", optional: true)
-                          .AddJsonFile("configs/override.json", optional: true)
+                    config.AddJsonFile("config/logging.json", optional: true)
+                          .AddJsonFile("config/override.json", optional: true)
                           .AddJsonFile("secrets/connectionstrings.json", optional: true)
                           .AddEnvironmentVariables();
                 })
